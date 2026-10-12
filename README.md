@@ -94,7 +94,6 @@ The original thesis documents:
 | ![Prototype photograph 1](Prototype/1.jpg) | ![Prototype photograph 2](Prototype/2.jpg) |
 | ![Prototype photograph 3](Prototype/3.jpg) | ![Prototype photograph 4](Prototype/4.jpg) |
 | ![Prototype photograph 5](Prototype/5.jpg) | ![Prototype photograph 6](Prototype/6.jpg) |
-| ![Prototype photograph 7](Prototype/7.jpg) | ![Prototype photograph 8](Prototype/8.jpg) |
 
 ## Results and Limitations
 
