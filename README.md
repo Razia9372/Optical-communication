@@ -1,32 +1,126 @@
-# Optical-communication
-The final representation of BSc project.
+# Free-Space Optical Audio Communication System
 
+**Bachelor's Thesis | Engineering Science — Telecommunications**  
+Salman Farsi University of Kazerun | 2017  
+**Author:** Razia Jafari
 
-Video, audio and control signals are generally transmitted through an electric wire made of copper. In contrast, a method for sending these signals as optical signals and converting them back into electric signals on the receiver side is generally called "optical transmission" or "optical communication."
+## Project Overview
 
-![20230426141436_397](https://github.com/user-attachments/assets/df8f6a19-c805-4c52-88f8-86d1d578d6d4)
+This project presents the design and hardware implementation of a short-range **free-space optical (FSO) communication system** for transmitting analog audio signals using a laser beam.
 
-![604d153a5f030d001cda23e8](https://github.com/user-attachments/assets/ba4e80a4-a628-45f1-a179-a9b97e620872)
+The system converts an electrical audio signal into variations in laser intensity. At the receiver, a photodiode detects the modulated light and converts it back into an electrical signal, which is amplified for audio playback.
 
-Fiber Optic Transmission Technology
+The project combines analog electronics, optical communications, signal conditioning, and PCB design.
 
-Usually, a fiber optic communication system consists of three main components: optical transmitter, fiber optic cable and an optical receiver. The optical transmitter converts the electrical signal to the optical signal; the fiber optic cable carries the optical signal from the optical transmitter to the optical receiver, and the optical receiver reconverts the optical signal to electrical signal. The most commonly used optical transmitter is semiconductor devices like LEDs (light-emitting diodes) and laser diodes. Photodetector is the key part of an optical receiver. It converts light into electricity using photodetector effect. As for the fiber optic cable, there is too much to say. As the use and the demand for speed and bandwidth increases, the development of optical cables is amazing. Now in the optical cable market, there are OS2 fiber, OM1 fiber, OM2 fiber, OM3 fiber, OM4 fiber and OM5 fiber cable for different optical applications. Optical fibers are used as a medium for telecommunication and networking because it is flexible and can be bundled as cables. It is especially advantageous for long-distance communications, because light propagates through the fiber with little attenuation compared to electrical copper cables. The figure below shows that all fiber optic transmission systems use modulated light to convey information from a transmitter to a companion receiver.
+## System Architecture
 
+```text
+Audio Input
+    |
+    v
+Signal Conditioning & Amplification
+    |
+    v
+Laser Driver & Direct Modulation
+    |
+    v
+Laser Transmitter
+    |
+    v
+Free-Space Optical Channel
+    |
+    v
+BPW46 PIN Photodiode
+    |
+    v
+Audio Amplification
+    |
+    v
+Audio Output
+```
 
-![_1588132197_Ss4yjSWOy2](https://github.com/user-attachments/assets/a4e031e1-0d91-4f96-978b-2d1eebbc6cea)
+The transmitter and receiver require an unobstructed optical path and proper alignment.
 
-Several advantages of Fiber Optic Transmission
+## Transmitter Design
 
-Optical fibers have largely replaced copper wire communications in core networks in the developed world, because of its advantages over electrical transmission. Here are the main advantages of fiber optic transmission.
+The transmitter processes the input audio signal through analog conditioning and amplification stages before applying it to the laser drive circuit.
 
-Extremely High Bandwidth: No other cable-based data transmission medium offers the bandwidth that fiber does. The volume of data that fiber optic cables transmit per unit time is far greater than copper cables.
+The audio signal modulates the laser output through variations in its electrical drive conditions, enabling analog information transmission over the optical channel.
 
-Longer Distance: in fiber optic transmission, optical cables are capable of providing low power loss, which enables signals can be transmitted to a longer distance than copper cables.
+Key implementation aspects include:
 
-Resistance to Electromagnetic Interference: in practical cable deployment, it’s inevitable to meet environments like power substations, heating, ventilating and other industrial sources of interference. However, fiber has a very low rate of bit error (10 EXP-13), as a result of fiber being so resistant to electromagnetic interference. Fiber optic transmission is virtually noise free.
+- Transistor-based input signal conditioning and biasing.
+- Capacitive coupling to separate AC audio signals from DC bias.
+- Adjustable amplification and laser drive circuitry.
+- PCB layout designed using **Altium Designer**.
+- Assembly and integration of the transmitter into a physical enclosure.
 
-Low Security Risk: the growth of the fiber optic communication market is mainly driven by increasing awareness about data security concerns and use of the alternative raw material. Data or signals are transmitted via light in fiber optic transmission. Therefore there is no way to detect the data being transmitted by "listening in" to the electromagnetic energy "leaking" through the cable, which ensures the absolute security of information.
+## Receiver Design
 
-Small Size: fiber optic cable has a very small diameter. For instance, the cable diameter of a single OM3 multimode fiber is about 2mm, which is smaller than that of coaxial copper cable. Small size saves more space in fiber optic transmission.
+The receiver uses a **BPW46 PIN photodiode** to detect the incoming modulated laser beam.
 
-Light Weight: fiber optic cables are made of glass or plastic, and they are thinner than copper cables. These make them lighter and easy to install. Easy to Accommodate Increasing Bandwidth: with the use of fiber optic cable, new equipment can be added to existing cable infrastructure. Because optical cable can provide vastly expanded capacity over the originally laid cable. And WDM (wavelength division multiplexing) technology, including CWDM and DWDM, enables fiber cables the ability to accommodate more bandwidth.
+The photodiode converts incident optical variations into an electrical signal, which is amplified to recover the transmitted audio.
+
+During development, different transistor-based and operational-amplifier configurations were investigated. These approaches produced noticeable noise in the recovered signal.
+
+Following these experiments, a **PAM8403 Class-D audio amplifier module** was selected for the receiver implementation.
+
+This stage of the project provided practical experience with:
+
+- Photodiode-based optical detection.
+- Analog amplification.
+- Noise and signal-quality limitations.
+- Circuit biasing and coupling.
+- Hardware troubleshooting and component selection.
+
+## Hardware Implementation
+
+The project includes a physical transmitter and receiver prototype.
+
+The transmitter was implemented using a custom-designed PCB, while the receiver integrates the optical detector and audio amplification circuitry.
+
+The original thesis documents:
+
+- Transmitter circuit schematic.
+- Altium PCB layout.
+- Assembled transmitter PCB.
+- Completed transmitter enclosure.
+- Receiver amplifier module.
+- Completed receiver prototype.
+
+## Results and Limitations
+
+The prototype demonstrated short-range analog audio transmission through a free-space optical channel.
+
+The thesis reports satisfactory output at distances of approximately **1 meter**.
+
+The principal engineering challenges involved:
+
+- Optical alignment between transmitter and receiver.
+- Noise introduced by receiver amplification stages.
+- Proper biasing of active components.
+- Signal coupling and amplification.
+- Maintaining usable recovered audio quality.
+
+The thesis does not provide a quantified bit-error rate, signal-to-noise ratio, or extended-distance performance study. The results should therefore be understood as a hardware proof of concept rather than a fully characterized communication link.
+
+## Technologies and Skills
+
+**Optical Communications:** Free-Space Optics, Laser Modulation, PIN Photodiodes
+
+**Electronics:** Analog Circuit Design, Transistors, Operational Amplifiers, Signal Conditioning
+
+**Hardware:** PCB Design, Altium Designer, Circuit Assembly, Prototype Testing
+
+**Engineering Methods:** Experimental Troubleshooting, Noise Analysis, Component Selection
+
+## Documentation
+
+The original bachelor's thesis, written in Persian, provides the theoretical background, circuit explanations, hardware photographs, and component information.
+
+**Project type:** Undergraduate hardware design and implementation  
+**Year:** 2017
+
+---
+
+*This repository documents an undergraduate engineering project and its original hardware implementation.*
