@@ -91,7 +91,7 @@ The original thesis documents:
 
 | Prototype 1 | Prototype 2 |
 |---|---|
-| ![Internal hardware assembly of the optical transmitter](Prototype/1.jpg) | ![Prototype photograph 2](Prototype/2.jpg) |
+| | ![Optical Transmitter](Prototype/1.jpg) <p align="center"><b>Figure 1.</b> Optical Transmitter — Internal Hardware Assembly</p> | ![Prototype 2](Prototype/2.jpg) | | ![Prototype photograph 2](Prototype/2.jpg) |
 | ![Prototype photograph 3](Prototype/3.jpg) | ![Prototype photograph 4](Prototype/4.jpg) |
 | ![Prototype photograph 5](Prototype/5.jpg) | ![Prototype photograph 6](Prototype/6.jpg) |
 
